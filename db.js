@@ -8,5 +8,5 @@ export default sql
 
 export async function initUsersTable(){
     await sql`DROP TABLE users`
-    return await sql`CREATE TABLE users (ﬁrstname varchar(100) not null,lastname varchar(100) not null)`;
+    await sql`CREATE TABLE users (ﬁrstname varchar(100) not null,lastname varchar(100) not null)`;
 }
