@@ -8,5 +8,5 @@ export async function loop(){
 
 async function insertSQL({firstname ,lastname }){
     console.log("insertion de l'utilisateur : ",firstname)
-    return sql`INSERT INTO users(ﬁrst_name,last_name) VALUES(${firstname},${lastname})`;
+    return sql`INSERT INTO users(ﬁrstname,lastname) VALUES(${firstname},${lastname})`;
 }
