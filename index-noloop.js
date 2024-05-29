@@ -1,10 +1,8 @@
 import { noloop } from "./noloop.js";
 import { initUsersTable } from "./db.js";
 
-await initUsersTable()
-console.log("init db done")
-await noloop()
-console.log("fin")
-
+await initUsersTable();
+const result = await noloop();
+console.log("No Loop inserted count: ", result.rowCount);
 
 process.exit(0)

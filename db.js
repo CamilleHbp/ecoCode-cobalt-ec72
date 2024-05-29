@@ -1,12 +1,15 @@
-// db.js
-import postgres from 'postgres'
+import pg from 'pg'
+const { Pool } = pg
 
-const sql = postgres('postgres://postgres:password@localhost:5432/postgres'); // will use psql environment variables
+const connectionString = 'postgres://postgres:password@localhost:5432/postgres';
 
-export default sql
-
+const db = new Pool({
+        connectionString,
+});
 
 export async function initUsersTable(){
-    await sql`DROP TABLE users`
-    await sql`CREATE TABLE users (ﬁrstname varchar(100) not null,lastname varchar(100) not null)`;
-}
+    await db.query('DROP TABLE IF EXISTS users');
+    await db.query('CREATE TABLE users (firstname varchar(100) not null,lastname varchar(100) not null)');
+};
+
+export default db;
