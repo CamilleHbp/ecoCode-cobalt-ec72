@@ -1,0 +1,17 @@
+{
+  "name": "ecocode-cobalt-ec72",
+  "version": "1.0.0",
+  "description": "TEsting the EC72 rule for the ecoCode challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./index.js"
+  },
+  "type": "module",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "pg": "^8.11.5",
+    "postgres": "^3.4.4"
+  }
+}
