@@ -10,6 +10,6 @@ setStartDate();
 const insertResults = await loop();
 const monitoringData = await getMonitoringData();
 console.log("Loop inserted count: ", insertResults.reduce((accumulator, currentValue) => accumulator + currentValue.rowCount, 0));
-console.log(stringifyObject(monitoringData));
+//console.log(stringifyObject(monitoringData));
 
 process.exit(0)
