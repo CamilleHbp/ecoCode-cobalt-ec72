@@ -1,4 +1,4 @@
-export function getRawStats(events) {
+function getRawStats(events) {
     const rawStats = {
         cpu_total : [],
         cpu_user : [],
@@ -18,6 +18,10 @@ export function getRawStats(events) {
         rawStats.networks_tx+=event['network']['tx_bytes']
     })
     return rawStats;
+}
+
+function cpuDiff(cpu_array){
+    return cpu_array[cpu_array.length- 1] - cpu_array[0]
 }
 
 export function getStats(events) {
@@ -42,9 +46,6 @@ export function getStats(events) {
     }
 }
 
-function cpuDiff(cpu_array){
-    return cpu_array[cpu_array.length- 1] - cpu_array[0]
-}
 
 export function displayStats(){
     console.log(`cpu total max (uCore): ${cpuDiff(cpu_total)}`)
@@ -55,4 +56,16 @@ export function displayStats(){
     console.log(`network rx total ${networks_rx}`)
     console.log(`network tx total ${networks_tx}`)
 
+}
+
+export function diffStats(stats_a, stats_b) {
+    return {
+        diff_cpu_total: stats_a.diff_cpu_total - stats_b.diff_cpu_total,
+        diff_cpu_user: stats_a.diff_cpu_user - stats_b.diff_cpu_user,
+        diff_cpu_system: stats_a.diff_cpu_system - stats_b.diff_cpu_system,
+        max_memory_usage: stats_a.max_memory_usage - stats_b.max_memory_usage,
+        max_memory_maxusage: stats_a.max_memory_maxusage - stats_b.max_memory_maxusage,
+        networks_rx: stats_a.networks_rx - stats_b.networks_rx,
+        networks_tx: stats_a.networks_tx - stats_b.networks_tx,
+    }
 }

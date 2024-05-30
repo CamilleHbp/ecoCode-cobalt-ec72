@@ -9,12 +9,13 @@ const containerName = 'devcontainer'
 let startDate;
 
 export async function setStartDate() {
-    startDate = new Date().toISOString();
+    startDate = new Date(Date.now()).toISOString();
 }
 
 export async function getMonitoringData() {
 
     const params = new URLSearchParams();
+    // params.append('start_time', startDate)
     params.append('start_time', encodeURIComponent(startDate))
 
     const requestUrl = cAdvisorApi.baseUrl + `/docker/${containerName}?` + params;
