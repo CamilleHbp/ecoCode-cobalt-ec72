@@ -3,7 +3,6 @@ import users from "./users.js";
 
 export async function loop(){
     return Promise.all(users.map(insertSQL));
-
 };
 
 async function insertSQL({firstname ,lastname }){

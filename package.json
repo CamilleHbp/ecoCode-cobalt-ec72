@@ -12,6 +12,9 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "pg": "^8.11.5"
+    "dotenv": "^16.4.5",
+    "node-fetch": "^3.3.2",
+    "pg": "^8.11.5",
+    "stringify-object": "^5.0.0"
   }
 }

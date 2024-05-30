@@ -46,10 +46,11 @@ services:
     privileged: true
     devices: 
       - "/dev/kmsg"
+
 volumes:
   postgres-data:
 networks:
-   ecocode: 
+  ecocode: 
     driver: bridge
     internal: false
 

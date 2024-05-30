@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import { noloop } from "./noloop.js";
 import { initUsersTable } from "./db.js";
 

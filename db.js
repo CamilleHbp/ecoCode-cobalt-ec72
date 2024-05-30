@@ -3,6 +3,8 @@ const { Pool } = pg
 
 const connectionString = `postgres://${process.env.POSTGRES_USER}:${process.env.POSTGRES_PASSWORD}@db:5432/${process.env.POSTGRES_DB}`;
 
+console.log('connectionString', connectionString);
+
 const db = new Pool({
         connectionString,
 });
