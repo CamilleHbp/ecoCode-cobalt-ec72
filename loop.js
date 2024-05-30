@@ -1,7 +1,6 @@
 import db from "./db.js";
-import users from "./users.js";
 
-export async function loop(){
+export async function loop(users){
     return Promise.all(users.map(insertSQL));
 };
 

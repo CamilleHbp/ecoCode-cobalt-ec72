@@ -4,10 +4,11 @@ import { initUsersTable } from "./db.js";
 import { setStartDate, getMonitoringData} from "./monitoring-api.js";
 import stringifyObject from 'stringify-object';
 import { getStats } from './stats.js';
+import users from './users.js';
 
 await initUsersTable();
 setStartDate();
-const insertResults = await noloop();
+const insertResults = await noloop(users);
 console.log("Loop inserted count: ", insertResults.rowCount);
 const monitoringData = await getMonitoringData();
 const stats = getStats(monitoringData);
