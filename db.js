@@ -1,7 +1,7 @@
 import pg from 'pg'
 const { Pool } = pg
 
-const connectionString = 'postgres://postgres:password@localhost:5432/postgres';
+const connectionString = `postgres://${process.env.POSTGRES_USER}:${process.env.POSTGRES_PASSWORD}@db:5432/${process.env.POSTGRES_DB}`;
 
 const db = new Pool({
         connectionString,

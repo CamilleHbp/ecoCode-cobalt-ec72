@@ -1,0 +1,55 @@
+version: '3.8'
+services:
+  devcontainer:
+    container_name: devcontainer
+    image: mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm
+    volumes:
+      - ../..:/workspaces:cached
+    networks: 
+      - ecocode
+    command: sleep infinity
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_DB: ${POSTGRES_DB}
+    env_file:
+      - .env
+
+  db:
+    image: postgres:alpine
+    container_name: db
+    restart: unless-stopped
+    networks: 
+      - ecocode
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_DB: ${POSTGRES_DB}
+    env_file:
+      - .env
+  
+  cadvisor:
+    container_name: cadvisor
+    image: gcr.io/cadvisor/cadvisor:latest
+    networks: 
+      - ecocode
+    ports:
+      - "8080:8080"
+    volumes: 
+      - "/:/rootfs"
+      - "/var/run:/var/run"
+      - "/sys:/sys"
+      - "/var/lib/docker/:/var/lib/docker"
+      - "/dev/disk/:/dev/disk"
+    privileged: true
+    devices: 
+      - "/dev/kmsg"
+volumes:
+  postgres-data:
+networks:
+   ecocode: 
+    driver: bridge
+    internal: false
+
