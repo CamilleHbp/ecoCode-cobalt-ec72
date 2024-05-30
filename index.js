@@ -12,13 +12,15 @@ const delay = (delayInms) => {
   };
 
 const runLoop = async (loopName, loopFn, usersCount) => {
+    const startTime = new Date(Date.now())
     await initUsersTable();
     setStartDate();
     const users = getUsers(usersCount);
     const results = await loopFn(users);
     const monitoringData = await getMonitoringData();
     const stats = getStats(monitoringData);
-    console.log(`${loopName}[${usersCount}] stats: `, stringifyObject(stats));
+    const endTime = new Date(Date.now())
+    console.log(`${loopName}[${usersCount}] stats (exec time : ${endTime - startTime} ms):`, stringifyObject(stats));
     await delay(1000);
     return stats;
 }
@@ -30,7 +32,7 @@ const runTest = async (usersCount) => {
 }
 
 
-for (const usersCount of [10000, 100000, 300000]) {
+for (const usersCount of [300000,300000,300000,300000,300000]) {
     await runTest(usersCount)
 }
 

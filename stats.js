@@ -4,7 +4,6 @@ function getRawStats(events) {
         cpu_user : [],
         cpu_system : [],
         memory_usage : [],
-        memory_maxusage :[],
         networks_rx : 0,
         networks_tx : 0,
     };
@@ -13,7 +12,6 @@ function getRawStats(events) {
         rawStats.cpu_user.push(event['cpu']['usage']['user'])
         rawStats.cpu_system.push(event['cpu']['usage']['system'])
         rawStats.memory_usage.push(event['memory']['usage'])
-        rawStats.memory_maxusage.push(event['memory']['max_usage'])
         rawStats.networks_rx+=event['network']['rx_bytes']
         rawStats.networks_tx+=event['network']['tx_bytes']
     })
@@ -30,7 +28,6 @@ export function getStats(events) {
         cpu_user,
         cpu_system,
         memory_usage,
-        memory_maxusage,
         networks_rx,
         networks_tx
     } = getRawStats(events);
@@ -39,8 +36,7 @@ export function getStats(events) {
         diff_cpu_total: cpuDiff(cpu_total),
         diff_cpu_user: cpuDiff(cpu_user),
         diff_cpu_system: cpuDiff(cpu_system),
-        max_memory_usage: Math.max(...memory_usage),
-        max_memory_maxusage: Math.max(...memory_maxusage),
+        memory_usage: Math.max(...memory_usage),
         networks_rx,
         networks_tx,
     }
@@ -63,8 +59,7 @@ export function diffStats(stats_a, stats_b) {
         diff_cpu_total: stats_a.diff_cpu_total - stats_b.diff_cpu_total,
         diff_cpu_user: stats_a.diff_cpu_user - stats_b.diff_cpu_user,
         diff_cpu_system: stats_a.diff_cpu_system - stats_b.diff_cpu_system,
-        max_memory_usage: stats_a.max_memory_usage - stats_b.max_memory_usage,
-        max_memory_maxusage: stats_a.max_memory_maxusage - stats_b.max_memory_maxusage,
+        memory_usage: stats_a.memory_usage - stats_b.memory_usage,
         networks_rx: stats_a.networks_rx - stats_b.networks_rx,
         networks_tx: stats_a.networks_tx - stats_b.networks_tx,
     }

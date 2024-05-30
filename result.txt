@@ -1,0 +1,135 @@
+
+> ecocode-cobalt-ec72@1.0.0 start
+> node ./index.js
+
+connectionString postgres://postgres:postgres@db:5432/postgres
+Requesting:  http://cadvisor:8080/api/v1.3/docker/devcontainer?start_time=2024-05-30T12%253A34%253A48.228Z
+No Loop[300000] stats (exec time : 1133 ms): {
+	diff_cpu_total: 60059284000,
+	diff_cpu_user: 52636719000,
+	diff_cpu_system: 7422565000,
+	memory_usage: 3049033728,
+	networks_rx: 27584121824,
+	networks_tx: 51299673792
+}
+Requesting:  http://cadvisor:8080/api/v1.3/docker/devcontainer?start_time=2024-05-30T12%253A34%253A50.344Z
+Loop[300000] stats (exec time : 39075 ms): {
+	diff_cpu_total: 61434092000,
+	diff_cpu_user: 54016042000,
+	diff_cpu_system: 7418050000,
+	memory_usage: 3049033728,
+	networks_rx: 28631200562,
+	networks_tx: 53645928005
+}
+Diff stats:  {
+	diff_cpu_total: 1374808000,
+	diff_cpu_user: 1379323000,
+	diff_cpu_system: -4515000,
+	memory_usage: 0,
+	networks_rx: 1047078738,
+	networks_tx: 2346254213
+}
+Requesting:  http://cadvisor:8080/api/v1.3/docker/devcontainer?start_time=2024-05-30T12%253A35%253A30.404Z
+No Loop[300000] stats (exec time : 1222 ms): {
+	diff_cpu_total: 60704519000,
+	diff_cpu_user: 53104092000,
+	diff_cpu_system: 7600427000,
+	memory_usage: 3049033728,
+	networks_rx: 28677480405,
+	networks_tx: 53743356124
+}
+Requesting:  http://cadvisor:8080/api/v1.3/docker/devcontainer?start_time=2024-05-30T12%253A35%253A32.640Z
+Loop[300000] stats (exec time : 39162 ms): {
+	diff_cpu_total: 77093828000,
+	diff_cpu_user: 69559789000,
+	diff_cpu_system: 7534039000,
+	memory_usage: 2528153600,
+	networks_rx: 29863758153,
+	networks_tx: 56419894269
+}
+Diff stats:  {
+	diff_cpu_total: 16389309000,
+	diff_cpu_user: 16455697000,
+	diff_cpu_system: -66388000,
+	memory_usage: -520880128,
+	networks_rx: 1186277748,
+	networks_tx: 2676538145
+}
+Requesting:  http://cadvisor:8080/api/v1.3/docker/devcontainer?start_time=2024-05-30T12%253A36%253A12.801Z
+No Loop[300000] stats (exec time : 1142 ms): {
+	diff_cpu_total: 77389258000,
+	diff_cpu_user: 69751353000,
+	diff_cpu_system: 7637905000,
+	memory_usage: 2533134336,
+	networks_rx: 29917666383,
+	networks_tx: 56530055867
+}
+Requesting:  http://cadvisor:8080/api/v1.3/docker/devcontainer?start_time=2024-05-30T12%253A36%253A14.942Z
+Loop[300000] stats (exec time : 40644 ms): {
+	diff_cpu_total: 78603098000,
+	diff_cpu_user: 71130568000,
+	diff_cpu_system: 7472529000,
+	memory_usage: 3015684096,
+	networks_rx: 31526644290,
+	networks_tx: 59831660909
+}
+Diff stats:  {
+	diff_cpu_total: 1213840000,
+	diff_cpu_user: 1379215000,
+	diff_cpu_system: -165376000,
+	memory_usage: 482549760,
+	networks_rx: 1608977907,
+	networks_tx: 3301605042
+}
+Requesting:  http://cadvisor:8080/api/v1.3/docker/devcontainer?start_time=2024-05-30T12%253A36%253A56.586Z
+No Loop[300000] stats (exec time : 1286 ms): {
+	diff_cpu_total: 78562387000,
+	diff_cpu_user: 71209474000,
+	diff_cpu_system: 7352913000,
+	memory_usage: 3049512960,
+	networks_rx: 31635740150,
+	networks_tx: 60064290920
+}
+Requesting:  http://cadvisor:8080/api/v1.3/docker/devcontainer?start_time=2024-05-30T12%253A36%253A58.878Z
+Loop[300000] stats (exec time : 38766 ms): {
+	diff_cpu_total: 78765230000,
+	diff_cpu_user: 71452212000,
+	diff_cpu_system: 7313017000,
+	memory_usage: 3070099456,
+	networks_rx: 33154064141,
+	networks_tx: 63163933346
+}
+Diff stats:  {
+	diff_cpu_total: 202843000,
+	diff_cpu_user: 242738000,
+	diff_cpu_system: -39896000,
+	memory_usage: 20586496,
+	networks_rx: 1518323991,
+	networks_tx: 3099642426
+}
+Requesting:  http://cadvisor:8080/api/v1.3/docker/devcontainer?start_time=2024-05-30T12%253A37%253A38.637Z
+No Loop[300000] stats (exec time : 1162 ms): {
+	diff_cpu_total: 77516252000,
+	diff_cpu_user: 70451319000,
+	diff_cpu_system: 7064932000,
+	memory_usage: 3090313216,
+	networks_rx: 33261608335,
+	networks_tx: 63384247074
+}
+Requesting:  http://cadvisor:8080/api/v1.3/docker/devcontainer?start_time=2024-05-30T12%253A37%253A40.807Z
+Loop[300000] stats (exec time : 39386 ms): {
+	diff_cpu_total: 77302791000,
+	diff_cpu_user: 70029331000,
+	diff_cpu_system: 7273460000,
+	memory_usage: 3090313216,
+	networks_rx: 34695729827,
+	networks_tx: 66303366540
+}
+Diff stats:  {
+	diff_cpu_total: -213461000,
+	diff_cpu_user: -421988000,
+	diff_cpu_system: 208528000,
+	memory_usage: 0,
+	networks_rx: 1434121492,
+	networks_tx: 2919119466
+}

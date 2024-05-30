@@ -8,7 +8,7 @@ const containerName = 'devcontainer'
 
 let startDate;
 
-export async function setStartDate() {
+export function setStartDate() {
     startDate = new Date(Date.now()).toISOString();
 }
 
