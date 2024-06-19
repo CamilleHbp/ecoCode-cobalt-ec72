@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./index.js",
-    "loop": "node ./index-loop.js",
-    "noloop": "node ./index-noloop.js"
+    "start": "node ./index.js"
   },
   "type": "module",
   "author": "",
@@ -16,6 +14,10 @@
     "dotenv": "^16.4.5",
     "node-fetch": "^3.3.2",
     "pg": "^8.11.5",
+    "pino": "^9.2.0",
     "stringify-object": "^5.0.0"
+  },
+  "devDependencies": {
+    "pino-pretty": "^11.2.1"
   }
 }
